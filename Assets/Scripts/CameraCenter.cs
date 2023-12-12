@@ -15,8 +15,6 @@ public class CenterCameraOnTilemap : MonoBehaviour
             // Step 2: Calculate the center of the Tilemap bounds
             Vector3 tilemapCenter = new Vector3(tilemapBounds.center.x, tilemapBounds.center.y, 0f);
 
-            Debug.Log(tilemapCenter);
-
             // Step 3: Position the camera at the calculated center
             Camera.main.transform.position = new Vector3(tilemapCenter.x, tilemapCenter.y, Camera.main.transform.position.z);
         }

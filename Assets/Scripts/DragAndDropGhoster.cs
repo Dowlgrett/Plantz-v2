@@ -9,7 +9,7 @@ public class DragAndDropGhoster : MonoBehaviour, IDragHandler, IBeginDragHandler
     {
         _ghostImage = new GameObject();
         var spriteRenderer = _ghostImage.AddComponent<SpriteRenderer>();
-        spriteRenderer.sprite = GetComponent<Card>().Sprite;
+        spriteRenderer.sprite = GetComponent<Card>().CardInfo.CardSprite;
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
         spriteRenderer.sortingOrder = 2;
     }

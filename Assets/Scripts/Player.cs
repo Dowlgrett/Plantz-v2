@@ -14,6 +14,4 @@ public class Player : MonoBehaviour
         _energy = energy;
         _energyChanged.Invoke(energy);
     }
-
-
 }

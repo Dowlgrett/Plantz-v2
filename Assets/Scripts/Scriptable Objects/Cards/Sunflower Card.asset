@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa0e0c50234bc549a46e1fe14ab3be7, type: 3}
+  m_Name: Sunflower Card
+  m_EditorClassIdentifier: 
+  CardSprite: {fileID: 21300000, guid: b492b36b3525451449da09cd6032aada, type: 3}
+  PlacementStrategy: {fileID: 11400000, guid: 528fdb935a2716843b79b53df15524ac, type: 2}
+  CardPlayer: {fileID: 11400000, guid: 423868198e4699f40aa1b742c1c53574, type: 2}
+  Title: Sunflower
+  Description: Gives energy
+  Cost: 2
+  PlantScript: {fileID: 11500000, guid: ee4f23e08f955e14e9939dc48b32e885, type: 3}
+  PlantSprite: {fileID: 21300000, guid: b492b36b3525451449da09cd6032aada, type: 3}
