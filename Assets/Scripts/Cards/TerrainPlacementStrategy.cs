@@ -7,13 +7,30 @@ public class TerrainPlacementStrategy : PlacementStrategy
         var mouseWorldPosition = Camera.main.ScreenToWorldPoint(eventData.position);
         var tilePosition = eventData.Tilemap.WorldToCell(mouseWorldPosition);
 
-        if (eventData.Tilemap.HasTile(tilePosition) || eventData.CurrentEnergy < eventData.Card.CardInfo.Cost)
+        if (!eventData.Tilemap.HasTile(tilePosition) && eventData.CurrentEnergy >= eventData.Card.CardInfo.Cost && IsAdjacent())
         {
-            return false;
+            return true;
         }
         else
         {
-            return true;
+            return false;
+        }
+
+        bool IsAdjacent()
+        {
+            var up = new Vector3Int(tilePosition.x, tilePosition.y + 1);
+            var down = new Vector3Int(tilePosition.x, tilePosition.y - 1);
+            var left = new Vector3Int(tilePosition.x - 1, tilePosition.y);
+            var right = new Vector3Int(tilePosition.x + 1, tilePosition.y);
+
+            if(eventData.Tilemap.HasTile(up) || eventData.Tilemap.HasTile(down) || eventData.Tilemap.HasTile(left) || eventData.Tilemap.HasTile(right))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
