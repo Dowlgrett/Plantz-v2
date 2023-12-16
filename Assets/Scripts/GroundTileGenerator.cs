@@ -15,6 +15,8 @@ public class GroundTileGenerator : MonoBehaviour
         var center = FindObjectOfType<CenterCameraOnTilemap>();
         center.CenterCamera();
 
+        
+
     }
 
 

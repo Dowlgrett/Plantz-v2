@@ -8,5 +8,6 @@ public class CardSO : ScriptableObject
     public string Title;
     public string Description;
     public int Cost;
+    public int MaxHealth;
 }
 

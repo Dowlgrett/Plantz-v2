@@ -8,7 +8,7 @@ public class Sunflower : TurnEntity
         player.SetEnergyAt(player.Energy + 1);
     }
 
-    public override void Start()
+    protected override void Start()
     {
         base.Start();
         _priority = 100;

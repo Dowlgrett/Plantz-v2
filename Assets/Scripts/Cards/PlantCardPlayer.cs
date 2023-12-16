@@ -15,6 +15,7 @@ public class PlantCardPlayer : CardPlayer
 
             var plantObject = Instantiate(_plantPrefab, centerPosition, Quaternion.identity);
             plantObject.AddComponent(PlantCardSO.PlantScript.GetClass());
+            plantObject.GetComponent<Health>().SetHealth(eventData.Card.CardInfo.MaxHealth);
             plantObject.GetComponent<SpriteRenderer>().sprite = PlantCardSO.PlantSprite;
 
             var player = FindObjectOfType<Player>();
