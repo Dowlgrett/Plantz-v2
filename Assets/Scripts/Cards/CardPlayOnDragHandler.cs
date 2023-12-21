@@ -1,11 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using CardSystem;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
 
 public class CardPlayOnDragHandler : MonoBehaviour, IEndDragHandler
 {
+    public UnityEvent CardWasPlayed;
+
+    public void Start()
+    {
+        CardWasPlayed.AddListener(FindObjectOfType<FogSystem>().UpdateFog);
+    }
+
     public void OnEndDrag(PointerEventData eventData)
     {
         var plantingEventData = new CardPlayEventData(EventSystem.current);
@@ -18,6 +25,7 @@ public class CardPlayOnDragHandler : MonoBehaviour, IEndDragHandler
         {
             plantingEventData.Card = card;
             plantingEventData.Card.CardInfo.CardPlayer.Play(plantingEventData);
+            CardWasPlayed?.Invoke();
         }
     }
 }

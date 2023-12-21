@@ -15,6 +15,7 @@ public class TerrainCardPlayer : CardPlayer
             var player = FindObjectOfType<Player>();
 
             player.SetEnergyAt(eventData.CurrentEnergy - eventData.Card.CardInfo.Cost);
+
             Destroy(eventData.Card.gameObject);
         }         
     }

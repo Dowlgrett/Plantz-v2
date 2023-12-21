@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 
-public abstract class TurnEntity : MonoBehaviour
+namespace TurnSystem
 {
-    public abstract void TakeTurn();
-    public int Priority => _priority;
-    protected int _priority;
-    protected virtual void Start()
+    public abstract class TurnEntity : MonoBehaviour
     {
-        TurnController.AddToTurnList(this);
-    } 
+        public abstract void TakeTurn();
+        public int Priority => _priority;
+        protected int _priority;
+        protected virtual void Start()
+        {
+            TurnController.AddToTurnList(this);
+        }
+    }
 }
+

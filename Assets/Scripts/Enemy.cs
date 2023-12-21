@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using TurnSystem;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 
 public class Enemy : TurnEntity
 {
@@ -41,11 +39,11 @@ public class Enemy : TurnEntity
         var tilemap = FindObjectOfType<Tilemap>();
         foreach (var position in positions)
         {
-            var checkPosition = Vector3Int.FloorToInt(transform.position) + position;
+            var checkPosition = tilemap.WorldToCell(transform.position) + position;
             var target = tilemap.GetInstantiatedObject(checkPosition);
             if (target != null)
             {
-                var plant = Physics2D.OverlapPoint((Vector3)checkPosition);
+                var plant = Physics2D.OverlapPoint(tilemap.GetCellCenterWorld(checkPosition));
                 if (plant != null)
                 {
                     return plant.GetComponent<Health>();

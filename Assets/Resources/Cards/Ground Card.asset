@@ -18,4 +18,5 @@ MonoBehaviour:
   Title: Ground
   Description: just ground
   Cost: 1
+  MaxHealth: 5
   Tile: {fileID: 11400000, guid: dfb1607e0058ee74d9fe09ecbe37cef5, type: 2}

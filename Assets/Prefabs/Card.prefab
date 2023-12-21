@@ -660,3 +660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c72c1fc307716340b6841d23eafc00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardWasPlayed:
+    m_PersistentCalls:
+      m_Calls: []
